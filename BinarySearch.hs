@@ -1,3 +1,4 @@
+binarySearch :: Ord a => [a] -> a -> Int -> Int -> Maybe Int
 binarySearch xs find low high
              | find == guess' = Just mid --end goal this is fine.
              | find > guess'  = binarySearch xs find mid high
