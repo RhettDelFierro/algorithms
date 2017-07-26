@@ -1,9 +1,11 @@
+
+--O(log n)
 binarySearch :: Ord a => [a] -> a -> Int -> Int -> Maybe Int
 binarySearch xs find low high
+             | low  == high   = Nothing
              | find == guess' = Just mid --end goal this is fine.
              | find > guess'  = binarySearch xs find mid high
              | find < guess'  = binarySearch xs find low (mid - 1)
-             | otherwise      = Nothing
              where high'  = high - 1
                    mid   = div (low + high') 2
                    guess' = xs !! mid
